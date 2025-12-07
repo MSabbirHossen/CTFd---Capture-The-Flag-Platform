@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teams - Al Khwarizmi CTF Contest</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a
+            href="index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              text-decoration: none;
+              color: white;
+            "
+          >
+            <i class="fas fa-flag"></i>
+            <span>CTFd</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="users.html" class="nav-link">Users</a></li>
+          <li><a href="teams.html" class="nav-link active">Teams</a></li>
+          <li><a href="#scoreboard" class="nav-link">Scoreboard</a></li>
+          <li><a href="#challenges" class="nav-link">Challenges</a></li>
+          <li>
+            <a href="#" class="nav-link admin-link"
+              ><i class="fas fa-lock"></i> Admin Panel</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link"><i class="fas fa-users"></i> Team</a>
+          </li>
+          <li>
+            <a href="#profile" class="nav-link profile-link"
+              ><i class="fas fa-user-circle"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="#settings" class="nav-link"
+              ><i class="fas fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Teams Page Header -->
+    <section class="page-header">
+      <div class="page-header-content">
+        <h1>Teams</h1>
+        <p class="page-description">
+          Explore all participating teams and their performance
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Teams Section -->
+      <section class="teams-section">
+        <div class="teams-controls">
+          <div class="control-group">
+            <select class="sort-select" id="sortBy">
+              <option value="name">Sort by Name</option>
+              <option value="score">Sort by Score</option>
+              <option value="rank">Sort by Rank</option>
+              <option value="members">Sort by Members</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <input
+              type="text"
+              class="search-input"
+              id="searchTeams"
+              placeholder="Search for matching teams"
+            />
+            <button class="search-btn" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Teams Table -->
+        <div class="teams-table-container">
+          <table class="teams-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Team Name</th>
+                <th>Score</th>
+                <th>Members</th>
+                <th>Challenges Solved</th>
+                <th>Affiliation</th>
+                <th>Country</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="teamsTableBody">
+              <!-- Teams will be populated here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn prev" id="prevBtn">
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <div class="page-info">
+            <span id="pageNumber">1</span> / <span id="totalPages">5</span>
+          </div>
+          <button class="page-btn next" id="nextBtn">
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="stats-section">
+        <h2>Team Statistics</h2>
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Teams</h3>
+              <p class="stat-number" id="totalTeams">0</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Active Teams</h3>
+              <p class="stat-number" id="activeTeams">0</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Avg. Score</h3>
+              <p class="stat-number" id="avgScore">0</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Avg. Members</h3>
+              <p class="stat-number" id="avgMembers">0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Teams Section -->
+      <section class="top-teams-section">
+        <h2>Top Teams</h2>
+        <div class="top-teams-container">
+          <div class="team-card rank-1">
+            <div class="rank-badge">
+              <i class="fas fa-trophy"></i>
+              <span>1st</span>
+            </div>
+            <div class="team-info">
+              <h3 id="top1Name">-</h3>
+              <p class="members" id="top1Members">0 members</p>
+              <p class="score" id="top1Score">0 points</p>
+              <p class="affiliation" id="top1Affiliation">-</p>
+            </div>
+          </div>
+          <div class="team-card rank-2">
+            <div class="rank-badge">
+              <i class="fas fa-medal"></i>
+              <span>2nd</span>
+            </div>
+            <div class="team-info">
+              <h3 id="top2Name">-</h3>
+              <p class="members" id="top2Members">0 members</p>
+              <p class="score" id="top2Score">0 points</p>
+              <p class="affiliation" id="top2Affiliation">-</p>
+            </div>
+          </div>
+          <div class="team-card rank-3">
+            <div class="rank-badge">
+              <i class="fas fa-medal"></i>
+              <span>3rd</span>
+            </div>
+            <div class="team-info">
+              <h3 id="top3Name">-</h3>
+              <p class="members" id="top3Members">0 members</p>
+              <p class="score" id="top3Score">0 points</p>
+              <p class="affiliation" id="top3Affiliation">-</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Members Distribution -->
+      <section class="team-distribution-section">
+        <h2>Team Size Distribution</h2>
+        <div class="distribution-container">
+          <div class="distribution-card">
+            <div class="distribution-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Solo Teams</h3>
+            <p class="distribution-number" id="soloTeams">0</p>
+            <p class="distribution-label">Single member teams</p>
+          </div>
+          <div class="distribution-card">
+            <div class="distribution-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Duo Teams</h3>
+            <p class="distribution-number" id="duoTeams">0</p>
+            <p class="distribution-label">Two member teams</p>
+          </div>
+          <div class="distribution-card">
+            <div class="distribution-icon">
+              <i class="fas fa-people-group"></i>
+            </div>
+            <h3>Trio Teams</h3>
+            <p class="distribution-number" id="trioTeams">0</p>
+            <p class="distribution-label">Three member teams</p>
+          </div>
+          <div class="distribution-card">
+            <div class="distribution-icon">
+              <i class="fas fa-circle-nodes"></i>
+            </div>
+            <h3>Full Teams</h3>
+            <p class="distribution-number" id="fullTeams">0</p>
+            <p class="distribution-label">Four member teams</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Powered by <strong>CTFd</strong></p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="teams.js"></script>
+  </body>
+</html>
