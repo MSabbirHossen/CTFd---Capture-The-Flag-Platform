@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications - Al Khwarizmi CTF Contest</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a
+            href="index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              text-decoration: none;
+              color: white;
+            "
+          >
+            <i class="fas fa-flag"></i>
+            <span>CTFd</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="users.html" class="nav-link">Users</a></li>
+          <li><a href="teams.html" class="nav-link">Teams</a></li>
+          <li><a href="scoreboard.html" class="nav-link">Scoreboard</a></li>
+          <li><a href="challenges.html" class="nav-link">Challenges</a></li>
+          <li>
+            <a href="#" class="nav-link admin-link"
+              ><i class="fas fa-lock"></i> Admin Panel</a
+            >
+          </li>
+          <li>
+            <a href="notifications.html" class="nav-link active"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link"><i class="fas fa-users"></i> Team</a>
+          </li>
+          <li>
+            <a href="#profile" class="nav-link profile-link"
+              ><i class="fas fa-user-circle"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="#settings" class="nav-link"
+              ><i class="fas fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Notifications Page Header -->
+    <section class="page-header">
+      <div class="page-header-content">
+        <h1>Notifications</h1>
+        <p class="page-description">
+          Stay updated with all announcements, contest updates, and activities
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content notifications-main">
+      <!-- Notifications Header with Controls -->
+      <div class="notifications-header">
+        <div class="header-title">
+          <h2>Your Notifications</h2>
+          <span class="unread-badge" id="unreadBadge">5</span>
+        </div>
+        <div class="header-controls">
+          <button class="filter-btn active" data-filter="all" id="filterAll">
+            <i class="fas fa-list"></i> All
+          </button>
+          <button class="filter-btn" data-filter="unread" id="filterUnread">
+            <i class="fas fa-circle"></i> Unread
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="important"
+            id="filterImportant"
+          >
+            <i class="fas fa-star"></i> Important
+          </button>
+          <button class="action-btn" id="markAllRead">
+            <i class="fas fa-check-double"></i> Mark All Read
+          </button>
+        </div>
+      </div>
+
+      <!-- Notifications Tabs -->
+      <div class="notification-tabs">
+        <button class="tab-btn active" data-tab="all-notifications">
+          <i class="fas fa-bell"></i> All Notifications
+        </button>
+        <button class="tab-btn" data-tab="announcements">
+          <i class="fas fa-megaphone"></i> Announcements
+        </button>
+        <button class="tab-btn" data-tab="activities">
+          <i class="fas fa-fire"></i> Activities
+        </button>
+        <button class="tab-btn" data-tab="messages">
+          <i class="fas fa-envelope"></i> Messages
+        </button>
+        <button class="tab-btn" data-tab="system">
+          <i class="fas fa-cog"></i> System
+        </button>
+      </div>
+
+      <!-- Search and Sort -->
+      <div class="notifications-controls">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="searchNotifications"
+            placeholder="Search notifications..."
+          />
+        </div>
+        <select id="sortBy" class="sort-select">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="unread">Unread First</option>
+        </select>
+      </div>
+
+      <!-- Notifications Container -->
+      <div class="notifications-container">
+        <div class="notification-list" id="notificationsList">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none">
+          <i class="fas fa-inbox"></i>
+          <h3>No Notifications</h3>
+          <p>You're all caught up! Check back later for updates.</p>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div
+        class="pagination-controls"
+        id="paginationControls"
+        style="display: none"
+      >
+        <button class="prev-btn" id="prevPage">
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <div class="page-info">
+          <span id="currentPage">1</span> of <span id="totalPages">1</span>
+        </div>
+        <button class="next-btn" id="nextPage">
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- Notification Detail Modal -->
+    <div class="notification-modal" id="notificationModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-header">
+          <div class="modal-badge-group">
+            <span class="modal-type-badge" id="modalType">Announcement</span>
+            <span class="modal-time" id="modalTime">2 hours ago</span>
+          </div>
+          <h2 id="modalTitle">Notification Title</h2>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-message" id="modalMessage">
+            Full notification message goes here
+          </div>
+
+          <div class="modal-actions">
+            <button class="action-icon-btn" id="markImportantBtn">
+              <i class="fas fa-star"></i> Mark Important
+            </button>
+            <button class="action-icon-btn" id="deleteBtn">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-overlay" id="modalOverlay"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Powered by <strong>CTFd</strong></p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="notifications.js"></script>
+  </body>
+</html>
