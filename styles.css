@@ -7639,70 +7639,25 @@ textarea.form-input {
   }
 }
 
-/* Admin Navbar */
-.navbar {
-  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-  padding: 1rem 0;
-  box-shadow: var(--shadow-md);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ==================== ADMIN PANEL STYLES ==================== */
+
+/* Admin Navbar - Only applies to admin.html */
+.admin-hero ~ .navbar,
+.update-banner ~ .navbar {
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
 }
 
-.nav-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-brand {
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.nav-brand a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 0;
-  align-items: center;
-  flex: 1;
-  margin: 0 2rem;
-}
-
-.nav-menu li {
-  position: relative;
-}
-
-.nav-link {
+.update-banner ~ .navbar .nav-link {
   color: #d1d5db;
-  text-decoration: none;
-  padding: 0.75rem 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  font-weight: 500;
 }
 
-.nav-link:hover {
+.update-banner ~ .navbar .nav-link:hover {
   color: white;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
 }
 
-.nav-link i {
+.update-banner ~ .navbar .nav-link i {
   font-size: 1.1rem;
 }
 
