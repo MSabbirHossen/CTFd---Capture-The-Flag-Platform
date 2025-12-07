@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTFd - Capture The Flag Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-flag"></i>
+          <span>CTFd</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#users" class="nav-link">Users</a></li>
+          <li><a href="#teams" class="nav-link">Teams</a></li>
+          <li><a href="#scoreboard" class="nav-link">Scoreboard</a></li>
+          <li><a href="#challenges" class="nav-link">Challenges</a></li>
+          <li>
+            <a href="#" class="nav-link admin-link"
+              ><i class="fas fa-lock"></i> Admin Panel</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link"><i class="fas fa-users"></i> Team</a>
+          </li>
+          <li>
+            <a href="#profile" class="nav-link profile-link"
+              ><i class="fas fa-user-circle"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="#settings" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-banner">
+          <img
+            src="https://via.placeholder.com/800x200/FFD700/333333?text=CTF+Banner"
+            alt="CTF Banner"
+            class="banner-image"
+          />
+        </div>
+        <div class="hero-text">
+          <h1>
+            A cool CTF platform from <span class="highlight">ctfd.io</span>
+          </h1>
+          <p class="subtitle">
+            Test your cybersecurity skills and compete with others
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Statistics Section -->
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Challenges</h3>
+              <p class="stat-number">25</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Teams</h3>
+              <p class="stat-number">156</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Participants</h3>
+              <p class="stat-number">487</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Flags Captured</h3>
+              <p class="stat-number">1,234</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Media Section -->
+      <section class="social-section">
+        <h2>Follow us on social media:</h2>
+        <div class="social-links">
+          <a href="#" class="social-link twitter" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="social-link github" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2>Ready to get started?</h2>
+            <p>Join the community and start solving challenges today</p>
+            <a href="#" class="cta-button primary">
+              <i class="fas fa-sign-in-alt"></i> Click here to login and setup
+              your CTF
+            </a>
+            <a href="#" class="cta-button secondary">
+              <i class="fas fa-user-plus"></i> Create an Account
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Preview -->
+      <section class="categories-section">
+        <h2>Challenge Categories</h2>
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-icon web">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Web</h3>
+            <p>8 Challenges</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon crypto">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Cryptography</h3>
+            <p>6 Challenges</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon forensics">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Forensics</h3>
+            <p>5 Challenges</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon pwn">
+              <i class="fas fa-terminal"></i>
+            </div>
+            <h3>Binary Exploitation</h3>
+            <p>4 Challenges</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Powered by <strong>CTFd</strong></p>
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
