@@ -7505,3 +7505,628 @@ textarea.form-input {
     bottom: 1rem;
   }
 }
+
+/* ==================== ADMIN PANEL STYLES ==================== */
+
+/* Update Banner */
+.update-banner {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 3px solid #b45309;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Admin Navbar */
+.navbar {
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-brand a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  align-items: center;
+  flex: 1;
+  margin: 0 2rem;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-link {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.nav-link i {
+  font-size: 1.1rem;
+}
+
+/* Admin Hero */
+.admin-hero {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-hero h1 {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Admin Container */
+.admin-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-icon.users {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.stat-icon.teams {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-icon.ip {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-icon.points {
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+}
+
+.stat-icon.challenges {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.stat-content h3 {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Main Stats Section */
+.main-stats {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stats-info h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-list li {
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  color: var(--text-dark);
+  border-left: 3px solid var(--primary-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-list li strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.info-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Chart Section */
+.chart-section {
+  grid-column: 1 / -1;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.chart-header h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.chart-btn {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.chart-btn:hover {
+  background: white;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 400px;
+  background: var(--bg-light);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Charts Row */
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.doughnut-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  height: 300px;
+  background: var(--bg-light);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.doughnut-wrapper canvas {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.doughnut-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.doughnut-stats p {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.doughnut-stats strong {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+/* Management Section */
+.management-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.section-header i {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Quick Actions Grid */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.action-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+.action-btn i {
+  font-size: 1.8rem;
+}
+
+/* Admin Footer */
+.admin-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.admin-footer p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .admin-container {
+    padding: 1.5rem;
+  }
+
+  .main-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .charts-row {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .update-banner {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .admin-hero h1 {
+    font-size: 2rem;
+  }
+
+  .admin-container {
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .chart-section {
+    grid-column: 1;
+  }
+
+  .chart-wrapper {
+    height: 300px;
+  }
+
+  .charts-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .doughnut-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .doughnut-stats {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    margin: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .action-btn {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .action-btn i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-banner {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .admin-hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-container {
+    padding: 0.75rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 0.75rem;
+  }
+
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .main-stats {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .stats-info h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-list li {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .chart-controls {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .management-section {
+    padding: 1rem;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .action-btn i {
+    font-size: 1.2rem;
+  }
+}
