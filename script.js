@@ -61,11 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const countdownCards = document.querySelectorAll(".countdown-card");
   const timers = [];
 
-  // Example: Set different end dates for each timer
+  // Set end dates for each round
+  // Preliminary Round: 11 December 2025 at 6:00 PM (18:00)
+  // Final Round: 20 December 2025 at 10:00 AM (10:00)
   const endDates = [
-    new Date("2025-12-20 18:00:00"), // Preliminary Round - Dec 20, 6:00 PM
-    new Date("2025-12-25 22:00:00"), // Final Round - Dec 25, 10:00 PM
-    new Date().getTime() + (2 * 60 * 60 * 1000 + 45 * 60 * 1000 + 20 * 1000), // Remaining time (2h 45m 20s from now)
+    new Date("2025-12-11 18:00:00"), // Preliminary Round - Dec 11, 6:00 PM
+    new Date("2025-12-20 10:00:00"), // Final Round - Dec 20, 10:00 AM
   ];
 
   countdownCards.forEach((card, index) => {

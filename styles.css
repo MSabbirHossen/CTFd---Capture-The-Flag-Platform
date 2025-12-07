@@ -386,6 +386,20 @@ body {
   font-weight: 500;
 }
 
+.event-date,
+.event-time,
+.event-mode,
+.event-venue {
+  display: block;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.event-venue {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
 /* ==================== SOCIAL SECTION ==================== */
 .social-section {
   text-align: center;
