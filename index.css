@@ -1,6 +1,6 @@
 /* ==================== HOMEPAGE STYLES ==================== */
 
-/* Hero Section */
+/* ==================== HERO SECTION ==================== */
 .hero {
   background: linear-gradient(
     135deg,
@@ -45,7 +45,7 @@
   margin-bottom: 2rem;
 }
 
-/* Statistics Section */
+/* ==================== STATISTICS SECTION ==================== */
 .stats-section {
   margin: 3rem 0;
 }
@@ -67,20 +67,6 @@
   gap: 1.5rem;
   transition: all 0.3s ease;
   border-left: 4px solid var(--primary-color);
-  animation: slideIn 0.6s ease-out forwards;
-}
-
-.stat-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.stat-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.stat-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.stat-card:nth-child(4) {
-  animation-delay: 0.4s;
 }
 
 .stat-card:hover {
@@ -114,7 +100,7 @@
   color: var(--text-dark);
 }
 
-/* Contest Overview Section */
+/* ==================== CONTEST OVERVIEW SECTION ==================== */
 .contest-overview-section {
   background: linear-gradient(
     135deg,
@@ -175,7 +161,7 @@
   font-style: italic;
 }
 
-/* Eligibility Section */
+/* ==================== ELIGIBILITY SECTION ==================== */
 .eligibility-section {
   margin: 3rem 0;
 }
@@ -261,7 +247,7 @@
   font-size: 0.95rem;
 }
 
-/* Timeline Section */
+/* ==================== TIMELINE SECTION ==================== */
 .timeline-section {
   margin: 3rem 0;
 }
@@ -375,7 +361,7 @@
   margin: 1.5rem 0;
 }
 
-/* Prizes Section */
+/* ==================== PRIZES SECTION ==================== */
 .prizes-section {
   margin: 3rem 0;
   padding: 2rem;
@@ -514,7 +500,7 @@
   margin: 0;
 }
 
-/* Rules Section */
+/* ==================== RULES SECTION ==================== */
 .rules-section {
   margin: 3rem 0;
 }
@@ -572,7 +558,7 @@
   margin: 0;
 }
 
-/* Countdown Clock Section */
+/* ==================== COUNTDOWN CLOCK SECTION ==================== */
 .countdown-section {
   margin: 3rem 0;
 }
@@ -612,17 +598,6 @@
   overflow: hidden;
   transition: all 0.3s ease;
   border-top: 5px solid var(--primary-color);
-  animation: slideIn 0.6s ease-out forwards;
-}
-
-.countdown-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.countdown-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.countdown-card:nth-child(3) {
-  animation-delay: 0.3s;
 }
 
 .countdown-card:hover {
@@ -760,7 +735,7 @@
   line-height: 1.4;
 }
 
-/* Social Section */
+/* ==================== SOCIAL SECTION ==================== */
 .social-section {
   text-align: center;
   margin: 3rem 0;
@@ -814,7 +789,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* CTA Section */
+/* ==================== CTA SECTION ==================== */
 .cta-section {
   margin: 3rem 0;
 }
@@ -879,7 +854,7 @@
   transform: translateY(-3px);
 }
 
-/* Categories Section */
+/* ==================== CATEGORIES SECTION ==================== */
 .categories-section {
   margin: 3rem 0;
 }
@@ -957,7 +932,44 @@
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* ==================== ANIMATIONS FOR HOMEPAGE ==================== */
+.stat-card {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.countdown-card {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.countdown-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.countdown-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.countdown-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Pulse animation for active timers */
+.countdown-card:has(.round-status.active) .time-value {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ==================== RESPONSIVE DESIGN - HOMEPAGE ==================== */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 1.75rem;
@@ -1160,7 +1172,11 @@
     font-size: 1.5rem;
   }
 
-  .footer-links {
-    gap: 1rem;
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .countdown-section h2 {
+    font-size: 1.5rem;
   }
 }

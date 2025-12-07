@@ -1,5 +1,4 @@
 /* ==================== TEAMS PAGE STYLES ==================== */
-
 .teams-section {
   background: var(--bg-white);
   border-radius: 12px;
@@ -15,13 +14,6 @@
   margin-bottom: 2rem;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.control-group {
-  display: flex;
-  gap: 0.5rem;
-  flex: 1;
-  min-width: 200px;
 }
 
 .sort-select {
@@ -314,7 +306,7 @@
   background: linear-gradient(90deg, #cd7f32, #b87333);
 }
 
-.rank-badge {
+.team-rank-badge {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -331,17 +323,17 @@
   font-size: 0.75rem;
 }
 
-.team-card.rank-1 .rank-badge {
+.team-card.rank-1 .team-rank-badge {
   background: linear-gradient(135deg, #fbbf24, #f59e0b);
   box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
-.team-card.rank-2 .rank-badge {
+.team-card.rank-2 .team-rank-badge {
   background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
   box-shadow: 0 4px 15px rgba(192, 192, 192, 0.3);
 }
 
-.team-card.rank-3 .rank-badge {
+.team-card.rank-3 .team-rank-badge {
   background: linear-gradient(135deg, #cd7f32, #b87333);
   box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
 }

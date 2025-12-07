@@ -129,6 +129,13 @@ body {
   transition: all 0.3s ease;
 }
 
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 /* ==================== FOOTER ==================== */
 .footer {
   background-color: var(--text-dark);
@@ -201,34 +208,23 @@ body {
   }
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
-/* ==================== MAIN CONTENT ==================== */
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* ==================== RESPONSIVE DESIGN ==================== */
+/* ==================== RESPONSIVE DESIGN - COMMON ==================== */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -251,6 +247,10 @@ body {
     display: flex;
   }
 
+  .main-content {
+    padding: 1rem;
+  }
+
   .footer-links {
     gap: 1rem;
   }
@@ -268,20 +268,8 @@ body {
   .main-content {
     padding: 1rem;
   }
-}
 
-/* ==================== ACCESSIBILITY ==================== */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .footer-links {
+    gap: 1rem;
   }
-}
-
-a:focus,
-button:focus,
-input:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
 }
