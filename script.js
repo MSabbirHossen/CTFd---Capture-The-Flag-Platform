@@ -1,3 +1,86 @@
+// ==================== COUNTDOWN CLOCK FUNCTIONALITY ====================
+class CountdownTimer {
+  constructor(card, endDate) {
+    this.card = card;
+    this.endDate = new Date(endDate);
+    this.daysElement = card.querySelector(".days");
+    this.hoursElement = card.querySelector(".hours");
+    this.minutesElement = card.querySelector(".minutes");
+    this.secondsElement = card.querySelector(".seconds");
+    this.statusElement = card.querySelector(".round-status");
+    this.init();
+  }
+
+  init() {
+    this.update();
+    this.interval = setInterval(() => this.update(), 1000);
+  }
+
+  update() {
+    const now = new Date().getTime();
+    const distance = this.endDate.getTime() - now;
+
+    if (distance < 0) {
+      // Timer finished
+      this.daysElement.textContent = "00";
+      this.hoursElement.textContent = "00";
+      this.minutesElement.textContent = "00";
+      this.secondsElement.textContent = "00";
+      this.statusElement.textContent = "Completed";
+      this.statusElement.className = "round-status completed";
+      clearInterval(this.interval);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    this.daysElement.textContent = this.pad(days);
+    this.hoursElement.textContent = this.pad(hours);
+    this.minutesElement.textContent = this.pad(minutes);
+    this.secondsElement.textContent = this.pad(seconds);
+  }
+
+  pad(num) {
+    return num.toString().padStart(2, "0");
+  }
+
+  destroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+}
+
+// Initialize countdown timers when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  const countdownCards = document.querySelectorAll(".countdown-card");
+  const timers = [];
+
+  // Example: Set different end dates for each timer
+  const endDates = [
+    new Date("2025-12-20 18:00:00"), // Preliminary Round - Dec 20, 6:00 PM
+    new Date("2025-12-25 22:00:00"), // Final Round - Dec 25, 10:00 PM
+    new Date().getTime() + (2 * 60 * 60 * 1000 + 45 * 60 * 1000 + 20 * 1000), // Remaining time (2h 45m 20s from now)
+  ];
+
+  countdownCards.forEach((card, index) => {
+    if (endDates[index]) {
+      const timer = new CountdownTimer(card, endDates[index]);
+      timers.push(timer);
+    }
+  });
+
+  // Cleanup timers on page unload
+  window.addEventListener("beforeunload", function () {
+    timers.forEach((timer) => timer.destroy());
+  });
+});
+
 // ==================== MOBILE MENU TOGGLE ====================
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
