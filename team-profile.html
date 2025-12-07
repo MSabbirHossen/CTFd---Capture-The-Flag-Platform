@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Profile - Al Khwarizmi CTF Contest</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a
+            href="index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              text-decoration: none;
+              color: white;
+            "
+          >
+            <i class="fas fa-flag"></i>
+            <span>CTFd</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="users.html" class="nav-link">Users</a></li>
+          <li><a href="teams.html" class="nav-link">Teams</a></li>
+          <li><a href="scoreboard.html" class="nav-link">Scoreboard</a></li>
+          <li><a href="challenges.html" class="nav-link">Challenges</a></li>
+          <li>
+            <a href="#" class="nav-link admin-link"
+              ><i class="fas fa-lock"></i> Admin Panel</a
+            >
+          </li>
+          <li>
+            <a href="notifications.html" class="nav-link"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a href="team-profile.html" class="nav-link active"
+              ><i class="fas fa-users"></i> Team</a
+            >
+          </li>
+          <li>
+            <a href="#profile" class="nav-link profile-link"
+              ><i class="fas fa-user-circle"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="#settings" class="nav-link"
+              ><i class="fas fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Team Header Hero Section -->
+    <section class="team-hero">
+      <div class="hero-background"></div>
+      <div class="hero-content">
+        <div class="team-rank-badge">
+          <i class="fas fa-crown"></i>
+          <span id="teamRank">1st place</span>
+        </div>
+        <h1 id="teamName">0xJaniNa</h1>
+        <div class="team-score">
+          <span id="teamScore">1300</span>
+          <span class="score-label">points</span>
+        </div>
+        <div class="team-quick-actions">
+          <button class="action-icon" title="Team Settings">
+            <i class="fas fa-sliders-h"></i>
+          </button>
+          <button class="action-icon" title="Invite Members">
+            <i class="fas fa-user-plus"></i>
+          </button>
+          <button class="action-icon" title="Team Info">
+            <i class="fas fa-info-circle"></i>
+          </button>
+          <button class="action-icon" title="Delete Team">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content team-profile-main">
+      <div class="team-layout">
+        <!-- Left Sidebar -->
+        <aside class="team-sidebar">
+          <!-- Team Stats -->
+          <div class="stats-card">
+            <h3>Quick Stats</h3>
+            <div class="stat-item">
+              <span class="stat-label">Global Rank</span>
+              <span class="stat-value" id="globalRank">#1</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Total Points</span>
+              <span class="stat-value" id="totalPoints">1300</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Challenges Solved</span>
+              <span class="stat-value" id="solvedCount">4</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Failed Attempts</span>
+              <span class="stat-value" id="failedCount">2</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Success Rate</span>
+              <span class="stat-value" id="successRate">66.67%</span>
+            </div>
+          </div>
+
+          <!-- Team Info -->
+          <div class="info-card">
+            <h3>Team Information</h3>
+            <div class="info-item">
+              <i class="fas fa-users"></i>
+              <div>
+                <span class="info-label">Members</span>
+                <span class="info-value" id="memberCount">2</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar"></i>
+              <div>
+                <span class="info-label">Created</span>
+                <span class="info-value" id="createdDate">Dec 3, 2025</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="info-label">Active Time</span>
+                <span class="info-value">4 days</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="team-content">
+          <!-- Tabs -->
+          <div class="team-tabs">
+            <button class="tab-btn active" data-tab="members">
+              <i class="fas fa-users"></i> Members
+            </button>
+            <button class="tab-btn" data-tab="statistics">
+              <i class="fas fa-chart-pie"></i> Statistics
+            </button>
+            <button class="tab-btn" data-tab="solves">
+              <i class="fas fa-check-circle"></i> Solves
+            </button>
+            <button class="tab-btn" data-tab="timeline">
+              <i class="fas fa-timeline"></i> Timeline
+            </button>
+          </div>
+
+          <!-- Members Tab -->
+          <div class="tab-content active" id="members-tab">
+            <h2>Team Members</h2>
+            <div class="members-grid" id="membersGrid">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Statistics Tab -->
+          <div class="tab-content" id="statistics-tab">
+            <h2>Team Statistics</h2>
+            <div class="statistics-grid">
+              <!-- Solve Percentages Chart -->
+              <div class="chart-container">
+                <div class="chart-header">
+                  <h3>Solve Percentages</h3>
+                  <button class="download-btn">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+                <canvas id="solveChart"></canvas>
+              </div>
+
+              <!-- Category Breakdown Chart -->
+              <div class="chart-container">
+                <div class="chart-header">
+                  <h3>Category Breakdown</h3>
+                  <button class="download-btn">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+                <canvas id="categoryChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Score Over Time Chart -->
+            <div class="chart-container full-width">
+              <div class="chart-header">
+                <h3>Score over Time</h3>
+                <button class="download-btn">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+              <canvas id="scoreTimeChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Solves Tab -->
+          <div class="tab-content" id="solves-tab">
+            <h2>Challenge Solves</h2>
+            <div class="solves-container">
+              <table class="solves-table">
+                <thead>
+                  <tr>
+                    <th>Challenge</th>
+                    <th>Category</th>
+                    <th>Value</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody id="solvesTableBody">
+                  <!-- Populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Timeline Tab -->
+          <div class="tab-content" id="timeline-tab">
+            <h2>Activity Timeline</h2>
+            <div class="timeline" id="timelineContainer">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Powered by <strong>CTFd</strong></p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="team-profile.js"></script>
+  </body>
+</html>

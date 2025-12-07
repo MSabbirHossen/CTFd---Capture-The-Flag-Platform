@@ -175,7 +175,7 @@ function displayTeams() {
       <td class="team-cell">
         <div class="team-info">
           <div class="team-avatar">${team.name.charAt(0).toUpperCase()}</div>
-          <a href="#" class="team-name">${team.name}</a>
+          <a href="team-profile.html" class="team-name">${team.name}</a>
         </div>
       </td>
       <td class="score-cell">
@@ -320,8 +320,9 @@ function updateDistribution() {
 
 // ==================== VIEW TEAM PROFILE ====================
 function viewTeamProfile(teamName) {
-  alert(`Viewing profile for team: ${teamName}`);
-  // In a real application, this would navigate to the team's profile page
+  // Navigate to team profile page
+  // In a real application, this would pass the team data or ID
+  window.location.href = "team-profile.html";
 }
 
 // ==================== COUNTER ANIMATION ====================
