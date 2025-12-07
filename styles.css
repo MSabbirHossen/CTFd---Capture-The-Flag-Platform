@@ -238,7 +238,11 @@ body {
 
 /* ==================== CONTEST OVERVIEW SECTION ==================== */
 .contest-overview-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--bg-white);
   padding: 3rem 2rem;
   border-radius: 1rem;
@@ -497,7 +501,11 @@ body {
 .prizes-section {
   margin: 3rem 0;
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(30, 64, 175, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05) 0%,
+    rgba(30, 64, 175, 0.05) 100%
+  );
   border-radius: 1rem;
 }
 
@@ -655,7 +663,11 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--bg-white);
   display: flex;
   align-items: center;
@@ -1326,8 +1338,8 @@ body {
     gap: 1rem;
   }
 }
-  }
 
+@media (max-width: 480px) {
   .stats-container {
     grid-template-columns: 1fr;
   }
@@ -1503,7 +1515,11 @@ body {
 
 /* ==================== USERS PAGE STYLING ==================== */
 .page-header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--bg-white);
   padding: 4rem 2rem;
   text-align: center;
@@ -1605,7 +1621,11 @@ body {
 }
 
 .users-table thead {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--bg-white);
 }
 
@@ -1657,7 +1677,11 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--bg-white);
   display: flex;
   align-items: center;
@@ -2068,7 +2092,11 @@ input:focus {
 
 .search-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border: none;
   border-radius: 8px;
@@ -2095,7 +2123,11 @@ input:focus {
 }
 
 .teams-table thead {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
 }
 
@@ -2142,7 +2174,11 @@ input:focus {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   color: white;
   display: flex;
   align-items: center;
@@ -2213,7 +2249,11 @@ input:focus {
 }
 
 .view-btn {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -2252,7 +2292,7 @@ input:focus {
 
 .top-teams-section h2::after,
 .team-distribution-section h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -2281,7 +2321,7 @@ input:focus {
 }
 
 .team-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2434,7 +2474,11 @@ input:focus {
 
 .page-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border: none;
   border-radius: 8px;
@@ -2684,7 +2728,7 @@ input:focus {
 }
 
 .slider::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 2px;
   top: 2px;
@@ -2783,7 +2827,11 @@ input:focus {
 
 .podium-height {
   width: 100px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 8px 8px 0 0;
   margin-top: 1rem;
 }
@@ -2874,7 +2922,11 @@ input:focus {
 }
 
 .scoreboard-table thead {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
 }
 
@@ -2915,7 +2967,11 @@ input:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -2943,7 +2999,11 @@ input:focus {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   display: flex;
   align-items: center;
@@ -3076,7 +3136,8 @@ input:focus {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -3121,13 +3182,17 @@ input:focus {
 }
 
 .ranking-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 .ranking-card:hover {
@@ -3153,7 +3218,11 @@ input:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -3201,7 +3270,11 @@ input:focus {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   display: flex;
   align-items: center;
@@ -3383,7 +3456,11 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   font-size: 1.5rem;
 }
@@ -3420,7 +3497,11 @@ input:focus {
 }
 
 .event-points {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -3476,7 +3557,7 @@ input:focus {
 }
 
 .stat-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -50%;
@@ -3866,7 +3947,11 @@ input:focus {
 }
 
 .category-btn.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border-color: var(--primary-color);
 }
@@ -4873,7 +4958,11 @@ input:focus {
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border-color: var(--primary-color);
 }
@@ -5516,7 +5605,11 @@ input:focus {
 
 /* ==================== TEAM PROFILE PAGE ==================== */
 .team-hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   padding: 3rem 1rem;
   color: white;
   text-align: center;
@@ -5731,7 +5824,11 @@ input:focus {
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border-color: var(--primary-color);
 }
@@ -6470,7 +6567,11 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    var(--primary-color)
+  );
   color: white;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -6912,7 +7013,11 @@ input:focus {
 }
 
 .settings-tab.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border-color: var(--primary-color);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
@@ -7000,7 +7105,7 @@ select:focus {
 textarea.form-input {
   resize: vertical;
   min-height: 120px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .form-actions {
@@ -7025,7 +7130,11 @@ textarea.form-input {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
 }
 
