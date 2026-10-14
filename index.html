@@ -4,56 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CTFd - Capture The Flag Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-brand">
-          <i class="fas fa-flag"></i>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 1000;">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+          <i class="fas fa-flag fa-lg"></i>
           <span>CTFd</span>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="users.html" class="nav-link">Users</a></li>
-          <li><a href="teams.html" class="nav-link">Teams</a></li>
-          <li><a href="scoreboard.html" class="nav-link">Scoreboard</a></li>
-          <li><a href="challenges.html" class="nav-link">Challenges</a></li>
-          <li>
-            <a href="admin.html" class="nav-link admin-link"
-              ><i class="fas fa-lock"></i> Admin Panel</a
-            >
-          </li>
-          <li>
-            <a href="notifications.html" class="nav-link"
-              ><i class="fas fa-bell"></i> Notifications</a
-            >
-          </li>
-          <li>
-            <a href="team-profile.html" class="nav-link"
-              ><i class="fas fa-users"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="profile.html" class="nav-link"
-              ><i class="fas fa-user-circle"></i> Profile</a
-            >
-          </li>
-          <li>
-            <a href="settings.html" class="nav-link"
-              ><i class="fas fa-cog"></i> Settings</a
-            >
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto gap-2">
+            <li class="nav-item"><a class="nav-link" href="users.html">Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
+            <li class="nav-item"><a class="nav-link" href="scoreboard.html">Scoreboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="challenges.html">Challenges</a></li>
+            <li class="nav-item"><a class="nav-link btn-warning text-dark fw-bold ms-2" href="admin.html"><i class="fas fa-lock"></i> Admin Panel</a></li>
+            <li class="nav-item"><a class="nav-link" href="notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li class="nav-item"><a class="nav-link" href="team-profile.html"><i class="fas fa-users"></i> Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -61,16 +42,17 @@
     <!-- Hero Section -->
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="flex-grow-1 w-100">
       <!-- Countdown Clock Section -->
       <section class="countdown-section">
         <div class="countdown-header">
           <h2>Al Khwarizmi CTF Contest</h2>
           <p class="countdown-subtitle">Event Countdown</p>
         </div>
-        <div class="countdown-container">
+        <div class="row g-4 mx-auto" style="max-width: 1000px;">
           <!-- Preliminary Round -->
-          <div class="countdown-card" data-round="preliminary">
+          <div class="col-md-6">
+            <div class="countdown-card card h-100" data-round="preliminary">
             <div class="round-header">
               <h3>Preliminary Round</h3>
               <span class="round-status upcoming">Upcoming</span>
@@ -110,7 +92,8 @@
           </div>
 
           <!-- Final Round -->
-          <div class="countdown-card" data-round="final">
+          <div class="col-md-6">
+            <div class="countdown-card card h-100" data-round="final">
             <div class="round-header">
               <h3>Final Round</h3>
               <span class="round-status upcoming">Upcoming</span>
@@ -149,270 +132,339 @@
                 >
               </p>
             </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Contest Overview Section -->
-      <section class="contest-overview-section">
-        <div class="overview-header">
-          <h2>Al Khwarizmi CTF Contest</h2>
-          <div class="registration-badge closed">
-            <i class="fas fa-times-circle"></i> Registration Closed
+      <section class="py-5">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">Al Khwarizmi CTF Contest</h2>
+            <div class="badge badge-danger">
+              <i class="fas fa-times-circle"></i> Registration Closed
+            </div>
           </div>
-        </div>
-        <div class="overview-content">
-          <p class="overview-description">
-            A dynamic cybersecurity competition designed to test the skills of
-            problem-solvers and digital defenders. Participants engage with
-            real-world scenarios in a safe, ethical environment, challenging
-            their critical thinking and technical expertise. The contest
-            promotes teamwork, learning, and hands-on experience in cyber
-            defense.
-          </p>
-          <p class="overview-tagline">
-            <i class="fas fa-lightbulb"></i>
-            Inspired by Al-Khwarizmi's legacy of logic and innovation, this
-            event blends knowledge, strategy, and creativity.
-          </p>
+          <div>
+            <p class="lead">
+              A dynamic cybersecurity competition designed to test the skills of
+              problem-solvers and digital defenders. Participants engage with
+              real-world scenarios in a safe, ethical environment, challenging
+              their critical thinking and technical expertise. The contest
+              promotes teamwork, learning, and hands-on experience in cyber
+              defense.
+            </p>
+            <p class="text-muted">
+              <i class="fas fa-lightbulb"></i>
+              Inspired by Al-Khwarizmi's legacy of logic and innovation, this
+              event blends knowledge, strategy, and creativity.
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- Eligibility & Team Formation Section -->
-      <section class="eligibility-section">
-        <h2>Eligibility & Team Requirements</h2>
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-graduation-cap"></i>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="mb-4">Eligibility & Team Requirements</h2>
+          <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                </div>
+                <h5 class="card-title">Who Can Participate?</h5>
+                <ul class="list-unstyled">
+                  <li>Undergraduate (Honors or equivalent) students</li>
+                  <li>Diploma students from any university or institute</li>
+                  <li>Cross-university teams allowed</li>
+                </ul>
+              </div>
             </div>
-            <h3>Who Can Participate?</h3>
-            <ul>
-              <li>Undergraduate (Honors or equivalent) students</li>
-              <li>Diploma students from any university or institute</li>
-              <li>Cross-university teams allowed</li>
-            </ul>
           </div>
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Team Formation</h3>
-            <div class="team-size">
-              <p><strong>Team Members: 1 to 4</strong></p>
-              <p class="team-description">
-                Form your dream team and compete together!
-              </p>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-users fa-2x text-primary"></i>
+                </div>
+                <h5 class="card-title">Team Formation</h5>
+                <div class="mb-2">
+                  <p class="mb-1"><strong>Team Members: 1 to 4</strong></p>
+                  <p class="text-muted small">
+                    Form your dream team and compete together!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Contest Timeline Section -->
-      <section class="timeline-section">
-        <h2>Contest Timeline</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker preliminary">
-              <i class="fas fa-check"></i>
+      <section class="py-5">
+        <div class="container">
+          <h2 class="mb-4">Contest Timeline</h2>
+          <div class="timeline-vertical">
+            <div class="timeline-item">
+              <div class="timeline-marker preliminary">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="timeline-content card">
+                <div class="card-body">
+                  <h5 class="card-title">Preliminary Round</h5>
+                  <p class="mb-2"><strong>Date:</strong> 11 December 2025</p>
+                  <p class="mb-2"><strong>Duration:</strong> 6:00 PM – 2:00 AM (8 hours)</p>
+                  <p class="mb-3">
+                    <strong>Mode:</strong> <span class="badge bg-info">Online</span>
+                  </p>
+                  <p class="text-muted">
+                    Selected teams will qualify for the Final Round
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="timeline-content">
-              <h3>Preliminary Round</h3>
-              <p><strong>Date:</strong> 11 December 2025</p>
-              <p><strong>Duration:</strong> 6:00 PM – 2:00 AM (8 hours)</p>
-              <p>
-                <strong>Mode:</strong> <span class="badge online">Online</span>
-              </p>
-              <p class="timeline-description">
-                Selected teams will qualify for the Final Round
-              </p>
+            <div class="timeline-divider">
+              <i class="fas fa-arrow-down"></i>
             </div>
-          </div>
-          <div class="timeline-divider">
-            <i class="fas fa-arrow-down"></i>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker final">
-              <i class="fas fa-crown"></i>
-            </div>
-            <div class="timeline-content">
-              <h3>Final Round</h3>
-              <p><strong>Date:</strong> 20 December 2025</p>
-              <p><strong>Duration:</strong> 10:00 AM – 2:00 PM (4 hours)</p>
-              <p>
-                <strong>Venue:</strong>
-                <span class="badge onsite">On-Site</span>
-              </p>
-              <p class="venue-detail">
-                Krishibid Institution Bangladesh, Farmgate, Dhaka
-              </p>
+            <div class="timeline-item">
+              <div class="timeline-marker final">
+                <i class="fas fa-crown"></i>
+              </div>
+              <div class="timeline-content card">
+                <div class="card-body">
+                  <h5 class="card-title">Final Round</h5>
+                  <p class="mb-2"><strong>Date:</strong> 20 December 2025</p>
+                  <p class="mb-2"><strong>Duration:</strong> 10:00 AM – 2:00 PM (4 hours)</p>
+                  <p class="mb-3">
+                    <strong>Venue:</strong>
+                    <span class="badge bg-success">On-Site</span>
+                  </p>
+                  <p class="text-muted">
+                    Krishibid Institution Bangladesh, Farmgate, Dhaka
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Prizes Section -->
-      <section class="prizes-section">
-        <h2>Prizes & Awards</h2>
-        <p class="prizes-subtitle">
-          Top 5 teams in the Final Round will receive prize money, gift packs,
-          and T-shirts
-        </p>
-        <div class="prizes-container">
-          <div class="prize-card rank-1">
-            <div class="rank-badge">
-              <i class="fas fa-medal"></i>
-              <span>1st</span>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="mb-2">Prizes & Awards</h2>
+          <p class="text-muted mb-4">
+            Top 5 teams in the Final Round will receive prize money, gift packs,
+            and T-shirts
+          </p>
+          <div class="row g-3">
+            <div class="col-md-6 col-lg-4 col-xl-2.4" style="flex: 0 0 20%;">
+              <div class="card text-center h-100 border-warning">
+                <div class="card-body">
+                  <div class="mb-3 position-relative">
+                    <i class="fas fa-medal fa-2x" style="color: #ffc107;"></i>
+                    <span class="badge bg-warning text-dark position-absolute top-0 end-0">1st</span>
+                  </div>
+                  <h5 class="card-title">First Place</h5>
+                  <p class="h6 fw-bold text-success">70,000 BDT</p>
+                  <p class="small text-muted">+ Gift Pack & T-Shirt</p>
+                </div>
+              </div>
             </div>
-            <h3>First Place</h3>
-            <p class="prize-amount">70,000 BDT</p>
-            <p class="prize-gift">+ Gift Pack & T-Shirt</p>
-          </div>
-          <div class="prize-card rank-2">
-            <div class="rank-badge">
-              <i class="fas fa-medal"></i>
-              <span>2nd</span>
+            <div class="col-md-6 col-lg-4 col-xl-2.4" style="flex: 0 0 20%;">
+              <div class="card text-center h-100 border-secondary">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-medal fa-2x" style="color: #6c757d;"></i>
+                    <span class="badge bg-secondary position-absolute top-0 end-0">2nd</span>
+                  </div>
+                  <h5 class="card-title">Second Place</h5>
+                  <p class="h6 fw-bold text-info">50,000 BDT</p>
+                  <p class="small text-muted">+ Gift Pack & T-Shirt</p>
+                </div>
+              </div>
             </div>
-            <h3>Second Place</h3>
-            <p class="prize-amount">50,000 BDT</p>
-            <p class="prize-gift">+ Gift Pack & T-Shirt</p>
-          </div>
-          <div class="prize-card rank-3">
-            <div class="rank-badge">
-              <i class="fas fa-medal"></i>
-              <span>3rd</span>
+            <div class="col-md-6 col-lg-4 col-xl-2.4" style="flex: 0 0 20%;">
+              <div class="card text-center h-100 border-danger">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-medal fa-2x" style="color: #d4573b;"></i>
+                    <span class="badge bg-danger position-absolute top-0 end-0">3rd</span>
+                  </div>
+                  <h5 class="card-title">Third Place</h5>
+                  <p class="h6 fw-bold text-warning">40,000 BDT</p>
+                  <p class="small text-muted">+ Gift Pack & T-Shirt</p>
+                </div>
+              </div>
             </div>
-            <h3>Third Place</h3>
-            <p class="prize-amount">40,000 BDT</p>
-            <p class="prize-gift">+ Gift Pack & T-Shirt</p>
-          </div>
-          <div class="prize-card rank-4">
-            <div class="rank-badge">
-              <i class="fas fa-award"></i>
-              <span>4th</span>
+            <div class="col-md-6 col-lg-4 col-xl-2.4" style="flex: 0 0 20%;">
+              <div class="card text-center h-100 border-info">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-award fa-2x" style="color: #0d6efd;"></i>
+                    <span class="badge bg-info text-dark position-absolute top-0 end-0">4th</span>
+                  </div>
+                  <h5 class="card-title">Fourth Place</h5>
+                  <p class="h6 fw-bold">35,000 BDT</p>
+                  <p class="small text-muted">+ Gift Pack & T-Shirt</p>
+                </div>
+              </div>
             </div>
-            <h3>Fourth Place</h3>
-            <p class="prize-amount">35,000 BDT</p>
-            <p class="prize-gift">+ Gift Pack & T-Shirt</p>
-          </div>
-          <div class="prize-card rank-5">
-            <div class="rank-badge">
-              <i class="fas fa-award"></i>
-              <span>5th</span>
+            <div class="col-md-6 col-lg-4 col-xl-2.4" style="flex: 0 0 20%;">
+              <div class="card text-center h-100 border-primary">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-award fa-2x" style="color: #2563eb;"></i>
+                    <span class="badge bg-primary position-absolute top-0 end-0">5th</span>
+                  </div>
+                  <h5 class="card-title">Fifth Place</h5>
+                  <p class="h6 fw-bold">30,000 BDT</p>
+                  <p class="small text-muted">+ Gift Pack & T-Shirt</p>
+                </div>
+              </div>
             </div>
-            <h3>Fifth Place</h3>
-            <p class="prize-amount">30,000 BDT</p>
-            <p class="prize-gift">+ Gift Pack & T-Shirt</p>
           </div>
         </div>
       </section>
 
       <!-- General Rules Section -->
-      <section class="rules-section">
-        <h2>General Rules</h2>
-        <div class="rules-container">
-          <div class="rule-item">
-            <div class="rule-number">1</div>
-            <div class="rule-content">
-              <h3>Fair Play</h3>
-              <p>
-                Participants must maintain fairness and follow all contest rules
-                throughout the competition.
-              </p>
+      <section class="py-5">
+        <div class="container">
+          <h2 class="mb-4">General Rules</h2>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start gap-3">
+                    <span class="badge bg-primary rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">1</span>
+                    <div>
+                      <h5 class="card-title">Fair Play</h5>
+                      <p class="card-text text-muted">
+                        Participants must maintain fairness and follow all contest rules
+                        throughout the competition.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="rule-item">
-            <div class="rule-number">2</div>
-            <div class="rule-content">
-              <h3>Final Authority</h3>
-              <p>
-                All decisions made by the organizing committee are final and
-                binding.
-              </p>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start gap-3">
+                    <span class="badge bg-primary rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">2</span>
+                    <div>
+                      <h5 class="card-title">Final Authority</h5>
+                      <p class="card-text text-muted">
+                        All decisions made by the organizing committee are final and
+                        binding.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="rule-item">
-            <div class="rule-number">3</div>
-            <div class="rule-content">
-              <h3>Code of Conduct</h3>
-              <p>
-                Maintain ethical standards and respect all participants,
-                organizers, and infrastructure.
-              </p>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start gap-3">
+                    <span class="badge bg-primary rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">3</span>
+                    <div>
+                      <h5 class="card-title">Code of Conduct</h5>
+                      <p class="card-text text-muted">
+                        Maintain ethical standards and respect all participants,
+                        organizers, and infrastructure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Statistics Section -->
-      <section class="stats-section">
-        <div class="stats-container">
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-trophy"></i>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-trophy fa-3x text-warning"></i>
+                  </div>
+                  <h5 class="card-title">Challenges</h5>
+                  <p class="display-6 fw-bold text-primary">25</p>
+                </div>
+              </div>
             </div>
-            <div class="stat-info">
-              <h3>Challenges</h3>
-              <p class="stat-number">25</p>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-users fa-3x text-info"></i>
+                  </div>
+                  <h5 class="card-title">Teams</h5>
+                  <p class="display-6 fw-bold text-primary">156</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-users"></i>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-medal fa-3x text-danger"></i>
+                  </div>
+                  <h5 class="card-title">Participants</h5>
+                  <p class="display-6 fw-bold text-primary">487</p>
+                </div>
+              </div>
             </div>
-            <div class="stat-info">
-              <h3>Teams</h3>
-              <p class="stat-number">156</p>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-medal"></i>
-            </div>
-            <div class="stat-info">
-              <h3>Participants</h3>
-              <p class="stat-number">487</p>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-flag-checkered"></i>
-            </div>
-            <div class="stat-info">
-              <h3>Flags Captured</h3>
-              <p class="stat-number">1,234</p>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-flag-checkered fa-3x text-success"></i>
+                  </div>
+                  <h5 class="card-title">Flags Captured</h5>
+                  <p class="display-6 fw-bold text-primary">1,234</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Social Media Section -->
-      <section class="social-section">
-        <h2>Follow us on social media:</h2>
-        <div class="social-links">
-          <a href="#" class="social-link twitter" title="Twitter">
+      <section class="py-4 text-center">
+        <h3 class="mb-3">Follow us on social media:</h3>
+        <div class="d-flex justify-content-center gap-4">
+          <a href="#" class="btn btn-outline-primary btn-lg" title="Twitter">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="social-link facebook" title="Facebook">
+          <a href="#" class="btn btn-outline-primary btn-lg" title="Facebook">
             <i class="fab fa-facebook"></i>
           </a>
-          <a href="#" class="social-link github" title="GitHub">
+          <a href="#" class="btn btn-outline-dark btn-lg" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
         </div>
       </section>
 
       <!-- CTA Section -->
-      <section class="cta-section">
-        <div class="cta-card">
-          <div class="cta-content">
-            <h2>Ready to get started?</h2>
-            <p>Join the community and start solving challenges today</p>
-            <a href="#" class="cta-button primary">
-              <i class="fas fa-sign-in-alt"></i> Click here to login and setup
-              your CTF
+      <section class="py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
+        <div class="container text-center text-white">
+          <h2 class="mb-3">Ready to get started?</h2>
+          <p class="lead mb-4">Join the community and start solving challenges today</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="#" class="btn btn-light btn-lg">
+              <i class="fas fa-sign-in-alt"></i> Click here to login and setup your CTF
             </a>
-            <a href="#" class="cta-button secondary">
+            <a href="#" class="btn btn-outline-light btn-lg">
               <i class="fas fa-user-plus"></i> Create an Account
             </a>
           </div>
@@ -420,54 +472,81 @@
       </section>
 
       <!-- Categories Preview -->
-      <section class="categories-section">
-        <h2>Challenge Categories</h2>
-        <div class="categories-grid">
-          <div class="category-card">
-            <div class="category-icon web">
-              <i class="fas fa-globe"></i>
+      <section class="py-5">
+        <div class="container">
+          <h2 class="mb-4">Challenge Categories</h2>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100 border-primary">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-globe fa-3x text-primary"></i>
+                  </div>
+                  <h5 class="card-title">Web</h5>
+                  <p class="text-muted">8 Challenges</p>
+                </div>
+              </div>
             </div>
-            <h3>Web</h3>
-            <p>8 Challenges</p>
-          </div>
-          <div class="category-card">
-            <div class="category-icon crypto">
-              <i class="fas fa-lock"></i>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100 border-success">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-lock fa-3x text-success"></i>
+                  </div>
+                  <h5 class="card-title">Cryptography</h5>
+                  <p class="text-muted">6 Challenges</p>
+                </div>
+              </div>
             </div>
-            <h3>Cryptography</h3>
-            <p>6 Challenges</p>
-          </div>
-          <div class="category-card">
-            <div class="category-icon forensics">
-              <i class="fas fa-search"></i>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100 border-warning">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-search fa-3x text-warning"></i>
+                  </div>
+                  <h5 class="card-title">Forensics</h5>
+                  <p class="text-muted">5 Challenges</p>
+                </div>
+              </div>
             </div>
-            <h3>Forensics</h3>
-            <p>5 Challenges</p>
-          </div>
-          <div class="category-card">
-            <div class="category-icon pwn">
-              <i class="fas fa-terminal"></i>
+            <div class="col-md-6 col-lg-3">
+              <div class="card text-center h-100 border-danger">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-terminal fa-3x text-danger"></i>
+                  </div>
+                  <h5 class="card-title">Binary Exploitation</h5>
+                  <p class="text-muted">4 Challenges</p>
+                </div>
+              </div>
             </div>
-            <h3>Binary Exploitation</h3>
-            <p>4 Challenges</p>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p>Powered by <strong>CTFd</strong></p>
-        <div class="footer-links">
-          <a href="#">About</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
+    <footer class="footer bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">Powered by <strong>CTFd</strong></p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-links">
+              <a href="#" class="text-white-50 text-decoration-none me-3">About</a>
+              <a href="#" class="text-white-50 text-decoration-none me-3">Privacy</a>
+              <a href="#" class="text-white-50 text-decoration-none me-3">Terms</a>
+              <a href="#" class="text-white-50 text-decoration-none">Contact</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
   </body>
 </html>
