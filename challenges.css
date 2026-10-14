@@ -380,6 +380,7 @@
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2);
   border-color: var(--primary-color);
+  height: 100%;
 }
 
 .challenge-card:focus-within {
