@@ -1,14 +1,15 @@
-/* ==================== HOMEPAGE STYLES ==================== */
+/* ==================== HOMEPAGE STYLES (Bootstrap 5.3.3 Compatible) ==================== */
 
 /* ==================== HERO SECTION ==================== */
 .hero {
   background: linear-gradient(
     135deg,
-    rgba(37, 99, 235, 0.1) 0%,
-    rgba(30, 64, 175, 0.05) 100%
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(30, 64, 175, 0.04) 100%
   );
   padding: 3rem 2rem;
   text-align: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .hero-content {
@@ -23,31 +24,50 @@
 .banner-image {
   max-width: 100%;
   height: auto;
-  border-radius: 1rem;
+  border-radius: var(--bs-border-radius-xl);
   box-shadow: var(--shadow-lg);
   border: 3px solid var(--primary-color);
+  transition: var(--bs-transition);
+  display: block;
+}
+
+.banner-image:hover {
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+  transform: translateY(-4px);
 }
 
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
   color: var(--primary-color);
   font-weight: 700;
+  background: linear-gradient(
+    120deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
   font-size: 1.1rem;
   color: var(--text-light);
   margin-bottom: 2rem;
+  font-weight: 500;
 }
 
-/* ==================== STATISTICS SECTION ==================== */
+/* ==================== STATISTICS SECTION (Bootstrap 5.3.3 Compatible) ==================== */
 .stats-section {
   margin: 3rem 0;
+  padding: 0 var(--bs-spacer);
 }
 
 .stats-container {
@@ -55,35 +75,47 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stat-card {
   background: var(--bg-white);
   padding: 2rem;
-  border-radius: 0.75rem;
+  border-radius: var(--bs-border-radius-lg);
   box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  transition: all 0.3s ease;
+  transition: var(--bs-transition);
+  border-left: 4px solid var(--primary-color);
+  border: 1px solid var(--border-color);
   border-left: 4px solid var(--primary-color);
 }
 
 .stat-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
 }
 
 .stat-icon {
   font-size: 2.5rem;
-  color: var(--primary-color);
-  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--bg-white);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   width: 80px;
   height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
 }
 
 .stat-info h3 {
@@ -92,12 +124,20 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.stat-info {
+  flex: 1;
 }
 
 .stat-number {
   font-size: 1.75rem;
-  font-weight: bold;
-  color: var(--text-dark);
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+  display: block;
 }
 
 /* ==================== CONTEST OVERVIEW SECTION ==================== */
@@ -969,7 +1009,21 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* ==================== RESPONSIVE DESIGN - HOMEPAGE ==================== */
+/* ==================== RESPONSIVE DESIGN - HOMEPAGE (Bootstrap 5.3.3 Compatible) ==================== */
+@media (max-width: 1024px) {
+  .page-header-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .countdown-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline-item {
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 1.75rem;
@@ -978,14 +1032,18 @@
   .overview-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
 
   .overview-header h2 {
     font-size: 1.75rem;
+    margin: 0;
   }
 
   .timeline-item {
     gap: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .timeline-marker {
@@ -996,6 +1054,7 @@
 
   .timeline-content {
     padding: 1rem;
+    width: 100%;
   }
 
   .timeline-content h3 {
@@ -1021,6 +1080,9 @@
 
   .rule-item {
     gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .rule-number {
@@ -1108,15 +1170,6 @@
     font-size: 1.25rem;
   }
 
-  .timeline-item {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-content {
-    width: 100%;
-  }
-
   .prizes-container {
     grid-template-columns: 1fr;
   }
@@ -1132,12 +1185,6 @@
 
   .prize-amount {
     font-size: 1.35rem;
-  }
-
-  .rule-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .rule-content h3 {
@@ -1178,5 +1225,15 @@
 
   .countdown-section h2 {
     font-size: 1.5rem;
+  }
+
+  .stat-card {
+    gap: 1rem;
+  }
+
+  .stat-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
   }
 }

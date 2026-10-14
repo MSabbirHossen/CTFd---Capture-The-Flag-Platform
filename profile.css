@@ -1,4 +1,4 @@
-/* ==================== USER PROFILE PAGE ==================== */
+/* ==================== USER PROFILE PAGE (Bootstrap 5.3.3 Compatible) ==================== */
 .profile-hero {
   background: linear-gradient(
     135deg,
@@ -9,6 +9,7 @@
   padding: 4rem 1rem;
   text-align: center;
   position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .profile-hero::before {

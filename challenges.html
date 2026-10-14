@@ -4,314 +4,446 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenges - Al Khwarizmi CTF Contest</title>
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="challenges.css" />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="challenges.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-brand">
-          <a
-            href="index.html"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              text-decoration: none;
-              color: white;
-            "
-          >
-            <i class="fas fa-flag"></i>
-            <span>CTFd</span>
-          </a>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="users.html" class="nav-link">Users</a></li>
-          <li><a href="teams.html" class="nav-link">Teams</a></li>
-          <li><a href="scoreboard.html" class="nav-link">Scoreboard</a></li>
-          <li>
-            <a href="challenges.html" class="nav-link active">Challenges</a>
-          </li>
-          <li>
-            <a href="admin.html" class="nav-link admin-link"
-              ><i class="fas fa-lock"></i> Admin Panel</a
-            >
-          </li>
-          <li>
-            <a href="notifications.html" class="nav-link"
-              ><i class="fas fa-bell"></i> Notifications</a
-            >
-          </li>
-          <li>
-            <a href="team-profile.html" class="nav-link"
-              ><i class="fas fa-users"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="profile.html" class="nav-link"
-              ><i class="fas fa-user-circle"></i> Profile</a
-            >
-          </li>
-          <li>
-            <a href="settings.html" class="nav-link"
-              ><i class="fas fa-cog"></i> Settings</a
-            >
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        box-shadow: var(--shadow-md);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      "
+    >
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand fw-bold d-flex align-items-center gap-2"
+          href="index.html"
+        >
+          <i class="fas fa-flag fa-lg"></i>
+          <span>CTFd</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="users.html">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teams.html">Teams</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="challenges.html">Challenges</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="notifications.html"
+                ><i class="fas fa-bell"></i> Notifications</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team-profile.html"
+                ><i class="fas fa-users"></i> Team</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html"
+                ><i class="fas fa-user-circle"></i> Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html"
+                ><i class="fas fa-cog"></i> Settings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-warning text-dark fw-bold ms-2"
+                href="admin.html"
+                ><i class="fas fa-lock"></i> Admin Panel</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
     <!-- Challenges Page Header -->
-    <section class="page-header">
-      <div class="page-header-content">
-        <h1>Challenges</h1>
-        <p class="page-description">
+    <section class="py-5">
+      <div class="container">
+        <h1 class="mb-2">Challenges</h1>
+        <p class="text-muted">
           Explore all available challenges and test your cybersecurity skills
         </p>
       </div>
     </section>
 
     <!-- Main Content -->
-    <main class="main-content challenges-main">
-      <div class="challenges-layout">
-        <!-- Sidebar - Categories -->
-        <aside class="challenges-sidebar">
-          <div class="sidebar-header">
-            <h3><i class="fas fa-filter"></i> Categories</h3>
-            <button class="reset-filters-btn" id="resetFiltersBtn">
-              Reset
-            </button>
-          </div>
-
-          <div class="category-list">
-            <button class="category-btn active" data-category="all">
-              <span class="category-label">All Challenges</span>
-              <span class="category-count">25</span>
-            </button>
-            <button class="category-btn" data-category="crypto">
-              <i class="fas fa-lock"></i>
-              <span class="category-label">Cryptography</span>
-              <span class="category-count">6</span>
-            </button>
-            <button class="category-btn" data-category="osint">
-              <i class="fas fa-search"></i>
-              <span class="category-label">OSINT</span>
-              <span class="category-count">4</span>
-            </button>
-            <button class="category-btn" data-category="steganography">
-              <i class="fas fa-image"></i>
-              <span class="category-label">Steganography</span>
-              <span class="category-count">3</span>
-            </button>
-            <button class="category-btn" data-category="forensics">
-              <i class="fas fa-magnifying-glass"></i>
-              <span class="category-label">Forensics</span>
-              <span class="category-count">5</span>
-            </button>
-            <button class="category-btn" data-category="misc">
-              <i class="fas fa-puzzle-piece"></i>
-              <span class="category-label">Miscellaneous</span>
-              <span class="category-count">4</span>
-            </button>
-            <button class="category-btn" data-category="web">
-              <i class="fas fa-globe"></i>
-              <span class="category-label">Web</span>
-              <span class="category-count">8</span>
-            </button>
-          </div>
-
-          <div class="difficulty-filter">
-            <h4><i class="fas fa-layer-group"></i> Difficulty</h4>
-            <div class="difficulty-options">
-              <label class="difficulty-checkbox">
-                <input type="checkbox" value="easy" id="diffEasy" />
-                <span class="checkbox-label">Easy</span>
-              </label>
-              <label class="difficulty-checkbox">
-                <input type="checkbox" value="medium" id="diffMedium" />
-                <span class="checkbox-label">Medium</span>
-              </label>
-              <label class="difficulty-checkbox">
-                <input type="checkbox" value="hard" id="diffHard" />
-                <span class="checkbox-label">Hard</span>
-              </label>
-              <label class="difficulty-checkbox">
-                <input type="checkbox" value="insane" id="diffInsane" />
-                <span class="checkbox-label">Insane</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="status-filter">
-            <h4><i class="fas fa-check-circle"></i> Status</h4>
-            <div class="status-options">
-              <label class="status-checkbox">
-                <input type="checkbox" value="solved" id="statusSolved" />
-                <span class="checkbox-label">Solved</span>
-              </label>
-              <label class="status-checkbox">
-                <input type="checkbox" value="attempted" id="statusAttempted" />
-                <span class="checkbox-label">Attempted</span>
-              </label>
-              <label class="status-checkbox">
-                <input type="checkbox" value="unsolved" id="statusUnsolved" />
-                <span class="checkbox-label">Not Solved</span>
-              </label>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <section class="challenges-content">
-          <!-- Controls -->
-          <div class="challenges-controls">
-            <div class="search-bar">
-              <i class="fas fa-search"></i>
-              <input
-                type="text"
-                id="searchChallenges"
-                placeholder="Search challenges..."
-              />
-            </div>
-
-            <div class="sort-controls">
-              <select id="sortBy" class="sort-select">
-                <option value="newest">Newest</option>
-                <option value="points">Points (High to Low)</option>
-                <option value="solves">Most Solved</option>
-                <option value="difficulty">Difficulty</option>
-              </select>
+    <main class="flex-grow-1 w-100">
+      <div class="container-fluid px-0">
+        <div class="row g-0">
+          <!-- Sidebar - Categories -->
+          <aside
+            class="col-lg-3 bg-light p-4"
+            style="min-height: calc(100vh - 200px)"
+          >
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5><i class="fas fa-filter"></i> Categories</h5>
               <button
-                class="view-toggle-btn"
-                id="viewToggleBtn"
-                aria-label="Toggle view"
+                class="btn btn-sm btn-outline-secondary"
+                id="resetFiltersBtn"
               >
-                <i class="fas fa-th"></i>
+                Reset
               </button>
             </div>
-          </div>
 
-          <!-- Challenges Display -->
-          <div class="challenges-stats">
-            <p>
-              Showing <span id="challengeCount">0</span> challenges
-              <span id="filterInfo"></span>
-            </p>
-          </div>
+            <div class="btn-group-vertical w-100 mb-4">
+              <button
+                class="btn btn-outline-primary active text-start"
+                data-category="all"
+              >
+                <span>All Challenges</span>
+                <span class="badge bg-primary float-end">25</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="crypto"
+              >
+                <i class="fas fa-lock me-2"></i><span>Cryptography</span>
+                <span class="badge bg-primary float-end">6</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="osint"
+              >
+                <i class="fas fa-search me-2"></i><span>OSINT</span>
+                <span class="badge bg-primary float-end">4</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="steganography"
+              >
+                <i class="fas fa-image me-2"></i><span>Steganography</span>
+                <span class="badge bg-primary float-end">3</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="forensics"
+              >
+                <i class="fas fa-magnifying-glass me-2"></i
+                ><span>Forensics</span>
+                <span class="badge bg-primary float-end">5</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="misc"
+              >
+                <i class="fas fa-puzzle-piece me-2"></i
+                ><span>Miscellaneous</span>
+                <span class="badge bg-primary float-end">4</span>
+              </button>
+              <button
+                class="btn btn-outline-primary text-start"
+                data-category="web"
+              >
+                <i class="fas fa-globe me-2"></i><span>Web</span>
+                <span class="badge bg-primary float-end">8</span>
+              </button>
+            </div>
 
-          <!-- Challenges Grid -->
-          <div class="challenges-grid" id="challengesGrid">
-            <!-- Populated by JavaScript -->
-          </div>
+            <div class="mb-4">
+              <h6><i class="fas fa-layer-group me-2"></i>Difficulty</h6>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="easy"
+                  id="diffEasy"
+                />
+                <label class="form-check-label" for="diffEasy">Easy</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="medium"
+                  id="diffMedium"
+                />
+                <label class="form-check-label" for="diffMedium">Medium</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="hard"
+                  id="diffHard"
+                />
+                <label class="form-check-label" for="diffHard">Hard</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="insane"
+                  id="diffInsane"
+                />
+                <label class="form-check-label" for="diffInsane">Insane</label>
+              </div>
+            </div>
 
-          <!-- No Results -->
-          <div class="no-results" id="noResults" style="display: none">
-            <i class="fas fa-inbox"></i>
-            <h3>No challenges found</h3>
-            <p>Try adjusting your filters or search term</p>
-          </div>
-        </section>
+            <div>
+              <h6><i class="fas fa-check-circle me-2"></i>Status</h6>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="solved"
+                  id="statusSolved"
+                />
+                <label class="form-check-label" for="statusSolved"
+                  >Solved</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="attempted"
+                  id="statusAttempted"
+                />
+                <label class="form-check-label" for="statusAttempted"
+                  >Attempted</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="unsolved"
+                  id="statusUnsolved"
+                />
+                <label class="form-check-label" for="statusUnsolved"
+                  >Not Solved</label
+                >
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Content Area -->
+          <section class="col-lg-9 p-4">
+            <!-- Controls -->
+            <div
+              class="d-flex justify-content-between align-items-center mb-4 gap-3 flex-wrap"
+            >
+              <div class="flex-grow-1" style="min-width: 200px">
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="fas fa-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    id="searchChallenges"
+                    class="form-control"
+                    placeholder="Search challenges..."
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex gap-2">
+                <select
+                  id="sortBy"
+                  class="form-select"
+                  style="max-width: 200px"
+                >
+                  <option value="newest">Newest</option>
+                  <option value="points">Points (High to Low)</option>
+                  <option value="solves">Most Solved</option>
+                  <option value="difficulty">Difficulty</option>
+                </select>
+                <button
+                  class="btn btn-outline-secondary"
+                  id="viewToggleBtn"
+                  aria-label="Toggle view"
+                >
+                  <i class="fas fa-th"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Challenges Display -->
+            <div class="mb-3">
+              <p class="text-muted">
+                Showing <span id="challengeCount">0</span> challenges
+                <span id="filterInfo"></span>
+              </p>
+            </div>
+
+            <!-- Challenges Grid -->
+            <div class="row g-3" id="challengesGrid">
+              <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="text-center py-5" id="noResults" style="display: none">
+              <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+              <h4>No challenges found</h4>
+              <p class="text-muted">
+                Try adjusting your filters or search term
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
 
       <!-- Challenge Modal -->
-      <div class="challenge-modal" id="challengeModal">
-        <div class="modal-content">
-          <button class="modal-close" id="modalClose" aria-label="Close modal">
-            <i class="fas fa-times"></i>
-          </button>
-
-          <div class="modal-header">
-            <div class="modal-badge-group">
-              <span class="modal-category-badge" id="modalCategory"
-                >Category</span
-              >
-              <span class="modal-difficulty-badge" id="modalDifficulty"
-                >Easy</span
-              >
-            </div>
-            <h2 id="modalTitle">Challenge Name</h2>
-          </div>
-
-          <div class="modal-body">
-            <div class="modal-info">
-              <div class="info-item">
-                <span class="info-label">Points:</span>
-                <span class="info-value" id="modalPoints">100</span>
+      <div
+        class="modal fade"
+        id="challengeModal"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-bottom">
+              <div>
+                <span class="badge bg-primary me-2" id="modalCategory"
+                  >Category</span
+                >
+                <span class="badge bg-warning text-dark" id="modalDifficulty"
+                  >Easy</span
+                >
               </div>
-              <div class="info-item">
-                <span class="info-label">Solves:</span>
-                <span class="info-value" id="modalSolves">25</span>
+              <button
+                type="button"
+                class="btn-close"
+                id="modalClose"
+                aria-label="Close modal"
+              ></button>
+            </div>
+
+            <h2 class="modal-title px-4 pt-4 mb-0" id="modalTitle">
+              Challenge Name
+            </h2>
+
+            <div class="modal-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="mb-2">
+                    <span class="text-muted">Points:</span>
+                    <strong id="modalPoints">100</strong>
+                  </div>
+                  <div class="mb-2">
+                    <span class="text-muted">Solves:</span>
+                    <strong id="modalSolves">25</strong>
+                  </div>
+                  <div class="mb-2">
+                    <span class="text-muted">Status:</span>
+                    <strong id="modalStatus">Unsolved</strong>
+                  </div>
+                </div>
               </div>
-              <div class="info-item">
-                <span class="info-label">Status:</span>
-                <span class="info-value" id="modalStatus">Unsolved</span>
+
+              <div class="mb-3">
+                <h5>Description</h5>
+                <p id="modalDesc">Challenge description goes here</p>
               </div>
-            </div>
 
-            <div class="modal-description">
-              <h4>Description</h4>
-              <p id="modalDesc">Challenge description goes here</p>
-            </div>
-
-            <div class="modal-hints" id="modalHintsSection">
-              <h4>Hints</h4>
-              <div id="modalHints"></div>
-            </div>
-
-            <div
-              class="modal-files"
-              id="modalFilesSection"
-              style="display: none"
-            >
-              <h4>Files</h4>
-              <div id="modalFiles"></div>
-            </div>
-
-            <div class="modal-submissions">
-              <h4>Flag Submission</h4>
-              <div class="flag-input-group">
-                <input
-                  type="text"
-                  id="flagInput"
-                  placeholder="Enter the flag here..."
-                  class="flag-input"
-                />
-                <button class="submit-flag-btn" id="submitFlagBtn">
-                  <i class="fas fa-check"></i> Submit Flag
-                </button>
+              <div class="mb-3" id="modalHintsSection">
+                <h5>Hints</h5>
+                <div id="modalHints"></div>
               </div>
-              <div class="submission-feedback" id="submissionFeedback"></div>
+
+              <div id="modalFilesSection" style="display: none" class="mb-3">
+                <h5>Files</h5>
+                <div id="modalFiles"></div>
+              </div>
+
+              <div>
+                <h5>Flag Submission</h5>
+                <div class="input-group mb-2">
+                  <input
+                    type="text"
+                    id="flagInput"
+                    placeholder="Enter the flag here..."
+                    class="form-control"
+                  />
+                  <button class="btn btn-primary" id="submitFlagBtn">
+                    <i class="fas fa-check me-2"></i>Submit Flag
+                  </button>
+                </div>
+                <div id="submissionFeedback"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="modal-overlay" id="modalOverlay"></div>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p>Powered by <strong>CTFd</strong></p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="#">About</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
+    <footer class="footer bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">Powered by <strong>CTFd</strong></p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-links">
+              <a
+                href="index.html"
+                class="text-white-50 text-decoration-none me-3"
+                >Home</a
+              >
+              <a href="#" class="text-white-50 text-decoration-none me-3"
+                >About</a
+              >
+              <a href="#" class="text-white-50 text-decoration-none me-3"
+                >Privacy</a
+              >
+              <a href="#" class="text-white-50 text-decoration-none me-3"
+                >Terms</a
+              >
+              <a href="#" class="text-white-50 text-decoration-none">Contact</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
     <script src="challenges.js"></script>
   </body>
